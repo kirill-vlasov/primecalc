@@ -23,12 +23,15 @@ public class PrimeCalculator {
         return result;
     }
 
-    private boolean isPrimeNumber(int i) {
-        // проверить, делится ли число без остатка
-        for (int j=2; j <= i/j; j++) {
-            // если число делится без остатка, значит, оно не простое
-            if ((i % j) == 0)
+    private boolean isPrimeNumber(int n, List<Integer> primes) {
+        double sqrt = Math.sqrt(n);
+        for (int prime : primes) {
+            if (prime > sqrt) {
+                return true;
+            }
+            if (n % prime == 0) {
                 return false;
+            }
         }
         return true;
     }
