@@ -15,7 +15,7 @@ public class PrimeCalculator {
         result.add(2);
 
         for (int i = 3; i <= count; i++) {
-            if (isPrimeNumber(i)) {
+            if (isPrimeNumber(i, result)) {
                 result.add(i);
             }
         }
