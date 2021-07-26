@@ -14,7 +14,7 @@ public class PrimeCalculator {
         List<Long> result = new ArrayList<>();
 
         for (long i = 2; i <= count; i++) {
-            if (isPrimeNumber(i)) {
+            if (isPrimeNumber(i, 100)) {
                 result.add(i);
             }
         }
@@ -26,12 +26,11 @@ public class PrimeCalculator {
      * Check if a number is a prime.
      *
      * @param candidate Number to be tested.
+     * @param accuracy Number of tests to be performed.
      * @return true if the candidate is probably a prime, false if the candidate
      *          is certainly no prime.
      */
-    private boolean isPrimeNumber(long candidate) {
-        long accuracy = 100;
-
+    private boolean isPrimeNumber(long candidate, long accuracy) {
         if (candidate < 2) {
             return false;
         }
